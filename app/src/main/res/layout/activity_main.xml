@@ -107,7 +107,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Selected Date"
+        android:text="Year"
         android:textColor="@color/lightGrey"
         android:textSize="20sp"
         android:textStyle="bold"
