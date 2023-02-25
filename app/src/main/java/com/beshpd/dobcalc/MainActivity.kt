@@ -4,7 +4,6 @@ import android.app.DatePickerDialog
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
-import android.widget.DatePicker
 import android.widget.Toast
 import java.util.Calendar
 
@@ -26,7 +25,13 @@ class MainActivity : AppCompatActivity() {
         val year = myCalendar.get(Calendar.YEAR)
         val month = myCalendar.get(Calendar.MONTH)
         val day = myCalendar.get(Calendar.DAY_OF_MONTH)
-        //DatePickerDialog()
+        DatePickerDialog(
+            this,
+            DatePickerDialog.OnDateSetListener{ view, year, month, dayOfMonth -> },
+            year,
+            month,
+            day
+        )
         Toast.makeText(this, "btnDatePicker Pressed", Toast.LENGTH_SHORT).show()
     }
 }
