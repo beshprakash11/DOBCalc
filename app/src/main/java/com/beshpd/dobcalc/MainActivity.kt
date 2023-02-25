@@ -42,6 +42,12 @@ class MainActivity : AppCompatActivity() {
 
                 val sdf = SimpleDateFormat("dd/MM/yyyy", Locale.GERMAN)
                 val theDate = sdf.parse(selectedDate)
+
+                // date return in miliseconds
+                // convert to seconds by dividing /1000 and minutes by 60 i.e. in minutes = 60000
+
+                val selectedDateInMinutes = theDate.time / 60000
+                val currentDate = sdf.parse(sdf.format(System.currentTimeMillis()))
             },
             year,
             month,
