@@ -29,7 +29,7 @@ class MainActivity : AppCompatActivity() {
         DatePickerDialog(
             this,
             DatePickerDialog.OnDateSetListener{ view, year, month, dayOfMonth ->
-                Toast.makeText(this, "Year was $year, month was $month, date was $dayOfMonth", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Year was $year, month was ${month + 1}, date was $dayOfMonth", Toast.LENGTH_SHORT).show()
             },
             year,
             month,
