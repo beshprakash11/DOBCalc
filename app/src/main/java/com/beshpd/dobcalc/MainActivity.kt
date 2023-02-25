@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.Toast
+import java.time.Year
 import java.util.Calendar
 
 class MainActivity : AppCompatActivity() {
@@ -27,7 +28,9 @@ class MainActivity : AppCompatActivity() {
         val day = myCalendar.get(Calendar.DAY_OF_MONTH)
         DatePickerDialog(
             this,
-            DatePickerDialog.OnDateSetListener{ view, year, month, dayOfMonth -> },
+            DatePickerDialog.OnDateSetListener{ _, year, month, dayOfMonth ->
+
+            },
             year,
             month,
             day
