@@ -8,7 +8,7 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="textBlue">#264653</color>
-    <color name="bgColor">#C9B995</color>
+    <color name="bgColor">#F1DEB3</color>
     <color name="btnBg">#2a9d8f</color>
     <color name="lightGrey">#dad7cd</color>
 </resources>
