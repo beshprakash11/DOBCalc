@@ -58,11 +58,15 @@ class MainActivity : AppCompatActivity() {
 
                 val differenceInMinutes = currentDateInMinutes - selectedDateInMinutes
 
+                tvAgeInMinutes?.text = differenceInMinutes.toString()
+
 
                 // Selected date in year
                 val selectedYear = selectedDateInMinutes /( 60 * 24 * 30 * 12)
                 val currentYear = currentDateInMinutes /( 60 * 24 * 30 * 12)
                 val diffYear = currentYear - selectedYear
+
+                tvAgeInYear?.text = diffYear.toString()
             },
             year,
             month,
