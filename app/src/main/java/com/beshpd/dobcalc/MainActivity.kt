@@ -6,8 +6,9 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
+import java.text.SimpleDateFormat
 import java.time.Year
-import java.util.Calendar
+import java.util.*
 
 class MainActivity : AppCompatActivity() {
     private var tvSelectedDate: TextView? = null
@@ -38,6 +39,9 @@ class MainActivity : AppCompatActivity() {
 
                 val selectedDate = "$selectedDayOfMonth/${selectedMonth + 1}/$selectedYear"
                 tvSelectedDate?.text = selectedDate
+
+                val sdf = SimpleDateFormat("dd/MM/yyyy", Locale.GERMAN)
+                val theDate = sdf.parse(selectedDate)
             },
             year,
             month,
