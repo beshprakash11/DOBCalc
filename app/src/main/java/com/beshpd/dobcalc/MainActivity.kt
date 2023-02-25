@@ -51,27 +51,32 @@ class MainActivity : AppCompatActivity() {
                 // date return in miliseconds
                 // convert to seconds by dividing /1000 and minutes by 60 i.e. in minutes = 60000
 
-                val selectedDateInMinutes = theDate.time / 60000
-                val currentDate = sdf.parse(sdf.format(System.currentTimeMillis()))
+                theDate?.let {
+                    val selectedDateInMinutes = theDate.time / 60000
+                    val currentDate = sdf.parse(sdf.format(System.currentTimeMillis()))
 
-                val currentDateInMinutes = currentDate.time / 60000
+                    currentDate?.let {
+                        val currentDateInMinutes = currentDate.time / 60000
 
-                val differenceInMinutes = currentDateInMinutes - selectedDateInMinutes
+                        val differenceInMinutes = currentDateInMinutes - selectedDateInMinutes
 
-                tvAgeInMinutes?.text = differenceInMinutes.toString()
+                        tvAgeInMinutes?.text = differenceInMinutes.toString()
 
 
-                // Selected date in year
-                val selectedYear = selectedDateInMinutes /( 60 * 24 * 30 * 12)
-                val currentYear = currentDateInMinutes /( 60 * 24 * 30 * 12)
-                val diffYear = currentYear - selectedYear
+                        // Selected date in year
+                        val selectedYear = selectedDateInMinutes /( 60 * 24 * 30 * 12)
+                        val currentYear = currentDateInMinutes /( 60 * 24 * 30 * 12)
+                        val diffYear = currentYear - selectedYear
 
-                tvAgeInYear?.text = diffYear.toString()
+                        tvAgeInYear?.text = diffYear.toString()
+                    }
+                }
             },
             year,
             month,
             day
         )
+        //dont allow to select future dates
         dpd.datePicker.maxDate = System.currentTimeMillis() - 86400000
         dpd.show()
 
