@@ -52,6 +52,12 @@ class MainActivity : AppCompatActivity() {
                 val currentDateInMinutes = currentDate.time / 60000
 
                 val differenceInMinutes = currentDateInMinutes - selectedDateInMinutes
+
+
+                // Selected date in year
+                val selectedYear = selectedDateInMinutes /( 60 * 24 * 30 * 12)
+                val currentYear = currentDateInMinutes /( 60 * 24 * 30 * 12)
+                val diffYear = currentYear - selectedYear
             },
             year,
             month,
