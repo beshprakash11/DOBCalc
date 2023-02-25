@@ -37,7 +37,7 @@ class MainActivity : AppCompatActivity() {
         val year = myCalendar.get(Calendar.YEAR)
         val month = myCalendar.get(Calendar.MONTH)
         val day = myCalendar.get(Calendar.DAY_OF_MONTH)
-        DatePickerDialog(
+        val dpd = DatePickerDialog(
             this,
             DatePickerDialog.OnDateSetListener{ view, selectedYear, selectedMonth, selectedDayOfMonth ->
                 Toast.makeText(this, "Year was $selectedYear, month was ${selectedMonth + 1}, date was $selectedDayOfMonth", Toast.LENGTH_SHORT).show()
@@ -71,8 +71,9 @@ class MainActivity : AppCompatActivity() {
             year,
             month,
             day
-        ).show()
-
+        )
+        dpd.datePicker.maxDate = System.currentTimeMillis() - 86400000
+        dpd.show()
 
     }
 }
