@@ -4,16 +4,21 @@ import android.app.DatePickerDialog
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import android.widget.TextView
 import android.widget.Toast
 import java.time.Year
 import java.util.Calendar
 
 class MainActivity : AppCompatActivity() {
+    private var tvSelectedDate: TextView? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         val btnDatePicker: Button = findViewById(R.id.btnDatePicker)
+        tvSelectedDate = findViewById(R.id.tvSelectedDate)
+
 
         btnDatePicker.setOnClickListener{
             clickDatePicker()
@@ -35,6 +40,8 @@ class MainActivity : AppCompatActivity() {
             month,
             day
         ).show()
+
+        tvSelectedDate.text =
 
     }
 }
