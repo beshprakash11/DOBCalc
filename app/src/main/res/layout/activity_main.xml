@@ -65,7 +65,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="Selected Date"
-        android:textColor="@color/textBlue"
+        android:textColor="@color/lightGrey"
         android:textSize="20sp"
         android:textStyle="bold"
         />
